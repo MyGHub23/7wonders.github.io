@@ -4,9 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seven Wonders of the World</title>
     <meta name="description"
-        content="Explore and learn about the Seven Wonders of the World interactively. Click on the wonders to learn their details.">
+        content="Discover and learn about the 7 Wonders of the World, 7 Continents, Digital Wonders, and more in an interactive and educational app.">
+    <meta name="author" content="Abu Momen">
+    <meta name="keywords"
+        content="7 Wonders, Seven Wonders, 7 Continents, Interactive Learning, Educational App, Digital Wonders, Effective Habits">
+    <meta property="og:title" content="7 Wonders by Abu Momen">
+    <meta property="og:description"
+        content="Explore the wonders of the world and beyond with this fun and engaging educational app. Learn interactively about continents, habits, and more.">
+    <meta property="og:image" content="path/to/7wonders-preview-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myghub23.github.io/7wonders.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="7 Wonders by Abu Momen">
+    <meta name="twitter:description"
+        content="An interactive app to learn about the 7 Wonders of the World, continents, habits, and more. Fun and educational!">
+    <meta name="twitter:image" content="path/to/7wonders-preview-image.jpg">
+    <title>7 Wonders by Abu Momen</title>
     <style>
         body {
             display: flex;
@@ -136,7 +150,7 @@
         }
 
         .wonder.category-7Habits {
-            background-color: #FFD700;
+            background-color: yellow;
             /* Gold background */
             border-radius: 2px;
             /* Consistent rounded edges */
@@ -274,6 +288,24 @@
             font-size: 18px;
         }
 
+        .wonder.category-7Roadblocks {
+            background-color: orange;
+            /* Light Blue for tech */
+            border-radius: 10px;
+            padding: 5px;
+            height: 105px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            color: #000080;
+            /* Navy text */
+            font-size: 18px;
+        }
+
+
         .wonder.category-7Clearn {
 
             /* Light Blue for tech */
@@ -371,8 +403,6 @@
             outline: none;
             border-color: #4CAF50;
         }
-
-        
     </style>
 </head>
 
@@ -447,18 +477,18 @@
                 title: "7 Wonders of the World",
                 data: {
                     colosseum: {
-                        title: "Colosseum:",
-                        plainTextTitle: "Colosseum",
+                        title: "Colosseum",
+                        plainTextTitle: "Colosseum:",
                         description: "An ancient amphitheater in Rome, Italy, known for gladiatorial combat and other public spectacles. Built in around A.D. 70 to 72 by Emperor Vespasian of the Flavian dynasty"
                     },
                     petra: {
-                        title: "Petra:",
-                        plainTextTitle: "Petra",
+                        title: "Petra",
+                        plainTextTitle: "Petra:",
                         description: "A historical and archaeological city in southern Jordan, famous for its rock-cut architecture. It ia built in 5th century BC by The Nabataean"
                     },
                     tajmahal: {
-                        title: "Taj Mahal:",
-                        plainTextTitle: "Taj Mahal",
+                        title: "Taj Mahal",
+                        plainTextTitle: "Taj Mahal:",
                         description: "A magnificent mausoleum in India, built on 1632 to 1653 as a symbol of love by Emperor Shah Jahan."
                     },
                     greatwall: {
@@ -467,13 +497,13 @@
                         description: "An ancient series of walls in northern China, built for protection and trade. Construction started in the 7th century BC by Qin Dynasty, Ming dynasty"
                     },
                     chichenitza: {
-                        title: "Chichén Itzá:",
-                        plainTextTitle: "Chichén Itzá",
+                        title: "Chichén Itzá",
+                        plainTextTitle: "Chichén Itzá:",
                         description: "A large pre-Columbian archaeological site in Mexico built by the Maya civilization on 5th to 13th century"
                     },
                     machupicchu: {
-                        title: "Machu Picchu:",
-                        plainTextTitle: "Machu Picchu",
+                        title: "Machu Picchu",
+                        plainTextTitle: "Machu Picchu:",
                         description: "A 15th-century Inca citadel located high in the Andes Mountains of Peru. Construction is believed to be started in 1450 to 1460 by Incan Empire "
                     },
                     christredeemer: {
@@ -487,44 +517,44 @@
                 title: "7 Continents",
                 data: {
                     africa: {
-                        title: "<b style='color: yellow;'>Africa:</b>",
-                        plainTextTitle: "Africa",
+                        title: "<b style='color: yellow;'>Africa</b>",
+                        plainTextTitle: "Africa:",
                         description: "The second-largest continent with diverse ecosystems."
                     },
 
                     antarctica: {
-                        title: "<b>Antarctica:</b>",
-                        plainTextTitle: "Antarctica",
+                        title: "<b>Antarctica</b>",
+                        plainTextTitle: "Antarctica:",
                         description: "The coldest continent, covered in ice."
                     },
 
                     asia: {
                         title: "<b><i style='color: yellow;'>Asia</i></b>",
-                        plainTextTitle: "Asia",
+                        plainTextTitle: "Asia:",
                         description: "The largest continent, rich in culture and history."
                     },
 
                     europe: {
-                        title: "<b>Europe:</b>",
-                        plainTextTitle: "Europe",
+                        title: "<b>Europe</b>",
+                        plainTextTitle: "Europe:",
                         description: "Known for historical landmarks and diverse cultures."
                     },
 
                     northAmerica: {
-                        title: "<b>North America:</b>",
-                        plainTextTitle: "North America",
+                        title: "<b>North America</b>",
+                        plainTextTitle: "North America:",
                         description: "A continent of diverse climates and geography."
                     },
 
                     southAmerica: {
-                        title: "<b style='color: yellow;'>South America:</b>",
-                        plainTextTitle: "South America",
+                        title: "<b style='color: yellow;'>South America</b>",
+                        plainTextTitle: "South America:",
                         description: "Home to the Amazon rainforest and Andes Mountains."
                     },
 
                     australia: {
-                        title: "<b>Australia:</b>",
-                        plainTextTitle: "Australia",
+                        title: "<b>Australia</b>",
+                        plainTextTitle: "Australia:",
                         description: "The smallest continent, known for unique wildlife."
                     }
                 }
@@ -533,44 +563,44 @@
                 title: "7 Colors of the Rainbow",
                 data: {
                     red: {
-                        title: "Red:",
-                        plainTextTitle: "Red",
+                        title: "Red",
+                        plainTextTitle: "Red:",
                         description: "The color of passion and energy."
                     },
 
                     orange: {
-                        title: "Orange:",
-                        plainTextTitle: "Orange",
+                        title: "Orange",
+                        plainTextTitle: "Orange:",
                         description: "The color of creativity and enthusiasm."
                     },
 
                     yellow: {
-                        title: "<span style='color: blue;'>Yellow:</span>",
-                        plainTextTitle: "Yellow",
+                        title: "<span style='color: blue;'>Yellow</span>",
+                        plainTextTitle: "Yellow:",
                         description: "The color of sunshine and happiness."
                     },
 
                     green: {
-                        title: "Green:",
-                        plainTextTitle: "Green",
+                        title: "Green",
+                        plainTextTitle: "Green:",
                         description: "The color of nature and growth."
                     },
 
                     blue: {
-                        title: "Blue:",
-                        plainTextTitle: "Blue",
+                        title: "Blue",
+                        plainTextTitle: "Blue:",
                         description: "The color of calm and stability."
                     },
 
                     indigo: {
-                        title: "Indigo:",
-                        plainTextTitle: "Indigo",
+                        title: "Indigo",
+                        plainTextTitle: "Indigo:",
                         description: "The color of intuition and perception."
                     },
 
                     violet: {
-                        title: "Violet:",
-                        plainTextTitle: "Violet",
+                        title: "Violet",
+                        plainTextTitle: "Violet:",
                         description: "The color of imagination and spirituality."
                     }
                 }
@@ -579,44 +609,44 @@
                 title: "7 Habits of Highly Effective People",
                 data: {
                     habit1: {
-                        title: "<i>Be Proactive:</i>",
-                        plainTextTitle: "Be Proactive",
+                        title: "<i style='color: blue;'>Be Proactive</i>",
+                        plainTextTitle: "Be Proactive:",
                         description: "Take responsibility for your life and actions, and focus on what you can control rather than what you can't."
                     },
 
                     habit2: {
-                        title: "<i>Begin with the End in Mind:</i>",
-                        plainTextTitle: "Begin with the End in Mind",
+                        title: "<i style='color: blue;'>Begin with the End in Mind</i>",
+                        plainTextTitle: "Begin with the End in Mind:",
                         description: "Define your goals and purpose in life, and use them as a guide to make decisions and prioritize your actions."
                     },
 
                     habit3: {
-                        title: "<i>Put First Things First:</i>",
-                        plainTextTitle: "Put First Things First",
+                        title: "<i style='color: blue;'>Put First Things First</i>",
+                        plainTextTitle: "Put First Things First:",
                         description: "Prioritize your time and energy on the essential things in your life, and learn to say No to less important things."
                     },
 
                     habit4: {
-                        title: "<i>Think Win-Win:</i>",
-                        plainTextTitle: "Think Win-Win",
+                        title: "<i style='color: blue;'>Think Win-Win:</i>",
+                        plainTextTitle: "Think Win-Win:",
                         description: "Seek mutual benefit in all interactions and relationships, and look for solutions that benefit all parties involved."
                     },
 
                     habit5: {
-                        title: "<i>Seek First to Understand, Then to Be Understood:</i>",
-                        plainTextTitle: "Seek First to Understand, Then to Be Understood",
+                        title: "<i style='color: blue;'>Seek First to Understand, Then to Be Understood</i>",
+                        plainTextTitle: "Seek First to Understand, Then to Be Understood:",
                         description: "Listen empathetically and seek to understand others' perspectives before expressing your own."
                     },
 
                     habit6: {
-                        title: "<i>Synergize:</i>",
-                        plainTextTitle: "Synergize",
+                        title: "<i style='color: blue;'>Synergize</i>",
+                        plainTextTitle: "Synergize:",
                         description: "Work collaboratively with others to achieve goals and create outcomes more significant than any individual could achieve alone."
                     },
 
                     habit7: {
-                        title: "<i>Sharpen the Saw:</i>",
-                        plainTextTitle: "Sharpen the Saw",
+                        title: "<i style='color: blue;'>Sharpen the Saw</i>",
+                        plainTextTitle: "Sharpen the Saw:",
                         description: "Take time to renew and improve yourself physically, mentally, emotionally, and spiritually for continued success."
                     }
                 }
@@ -627,42 +657,42 @@
                 title: "7 Digital Wonders",
                 data: {
                     www: {
-                        title: "World Wide Web (WWW):",
-                        plainTextTitle: "World Wide Web (WWW)",
+                        title: "World Wide Web (WWW)",
+                        plainTextTitle: "World Wide Web (WWW):",
                         description: "It revolutionized communication, knowledge-sharing, and commerce, forming the backbone of the modern digital age."
                     },
                     google: {
-                        title: "Google Search Engine:",
-                        plainTextTitle: "Google Search Engine",
+                        title: "Google Search Engine",
+                        plainTextTitle: "Google Search Engine:",
                         description: "Google revolutionized how we access information by organizing the world's data and making it searchable in seconds."
                     },
 
                     ai: {
-                        title: "Artificial Intelligence (AI):",
-                        plainTextTitle: "Artificial Intelligence (AI)",
+                        title: "Artificial Intelligence (AI)",
+                        plainTextTitle: "Artificial Intelligence (AI):",
                         description: "It transforms industries with smart automation through applications like virtual assistants, self-driving cars, medical diagnostics and many more."
                     },
 
                     cloud: {
-                        title: "Cloud Computing:",
-                        plainTextTitle: "Cloud Computing",
+                        title: "Cloud Computing",
+                        plainTextTitle: "Cloud Computing:",
                         description: "For delivers on-demand computing services like storage, servers, and software over the internet."
                     },
 
                     smartphones: {
-                        title: "Smartphones:",
-                        plainTextTitle: "Smartphones",
+                        title: "Smartphones",
+                        plainTextTitle: "Smartphones:",
                         description: "For becoming the cornerstone of digital life. It revolutionized daily life, providing instant access to the internet, apps, and global connectivity at our fingertips."
                     },
 
                     socialMedia: {
-                        title: "Social Media Platforms:",
-                        plainTextTitle: "Social Media Platforms",
+                        title: "Social Media Platforms",
+                        plainTextTitle: "Social Media Platforms:",
                         description: "For connecting billions worldwide, enabling instant communication, content sharing, community building and so on."
                     },
                     iot: {
-                        title: "Internet of Things (IoT):",
-                        plainTextTitle: "Internet of Things (IoT)",
+                        title: "Internet of Things (IoT)",
+                        plainTextTitle: "Internet of Things (IoT):",
                         description: "It connects everyday devices like appliances, sensors, and vehicles to the internet, enabling them to collect and exchange data for making smarter world."
                     }
 
@@ -673,38 +703,38 @@
                 title: "7 C’s of Learning",
                 data: {
                     criticalThinking: {
-                        title: "Critical Thinking:",
-                        plainTextTitle: "Critical Thinking",
+                        title: "Critical Thinking",
+                        plainTextTitle: "Critical Thinking:",
                         description: "Develops the ability to analyze, evaluate, and synthesize information logically. Encourages learners to challenge assumptions and make informed decisions."
                     },
                     creativity: {
-                        title: "Creativity:",
-                        plainTextTitle: "Creativity",
+                        title: "Creativity",
+                        plainTextTitle: "Creativity:",
                         description: "Stimulates the mind to innovate, imagine, and explore new possibilities. Builds problem-solving skills by promoting flexible and original thinking."
                     },
                     collaboration: {
-                        title: "Collaboration:",
-                        plainTextTitle: "Collaboration",
+                        title: "Collaboration",
+                        plainTextTitle: "Collaboration:",
                         description: "Focuses on teamwork and shared goals, fostering mutual respect and trust. Develops interpersonal skills to work effectively with diverse groups."
                     },
                     communication: {
-                        title: "Communication:",
-                        plainTextTitle: "Communication",
+                        title: "Communication",
+                        plainTextTitle: "Communication:",
                         description: "Builds the capacity to convey ideas through spoken, written, or digital forms. Enhances active listening, storytelling, and persuasive speaking skills."
                     },
                     culturalAwareness: {
-                        title: "Cultural Awareness:",
-                        plainTextTitle: "Cultural Awareness",
+                        title: "Cultural Awareness",
+                        plainTextTitle: "Cultural Awareness:",
                         description: "Promotes understanding and appreciation of different perspectives and values. Helps navigate global challenges by embracing diversity and inclusion."
                     },
                     confidence: {
-                        title: "Confidence:",
-                        plainTextTitle: "Confidence",
+                        title: "Confidence",
+                        plainTextTitle: "Confidence:",
                         description: "Cultivates self-assurance to face challenges and take calculated risks. Encourages resilience by turning failures into opportunities for growth."
                     },
                     curiosity: {
-                        title: "Curiosity:",
-                        plainTextTitle: "Curiosity",
+                        title: "Curiosity",
+                        plainTextTitle: "Curiosity:",
                         description: "Drives learners to ask questions, seek answers, and engage deeply with topics. Builds lifelong learning habits by making education exciting and meaningful."
                     }
                 }
@@ -714,37 +744,37 @@
                 title: "7 Roadblocks",
                 data: {
                     procrastination: {
-                        title: "<b style='font-size: 13px;'>Procrastination:</b>",
+                        title: "<b style='font-size: 13px;'>Procrastination</b>",
                         plainTextTitle: "Procrastination:",
                         description: "Delaying important tasks leads to unnecessary stress and rushed work, often affecting quality that to missed opportunities for growth."
                     },
                     lackCuriosity: {
-                        title: "<b><i>Lack of Curiosity:</i></b>",
+                        title: "<b style='font-size: 16px;'><i>Lack of Curiosity</i></b>",
                         plainTextTitle: "Lack of Curiosity:",
                         description: "A lack of curiosity prevents deeper learning while curiosity drives innovation and helps in making meaningful connections between ideas."
                     },
                     lackClearGoals: {
-                        title: "<b><i>Lack of Clear Goals:</i></b>",
+                        title: "<b style='font-size: 16px;'><i>Lack of Clear Goals</i></b>",
                         plainTextTitle: "Lack of Clear Goals:",
                         description: "Without clear goals, it’s easy to lose focus and motivation, making it harder to measure progress or stay on track. Clear goals provide measurable milestones to track progress."
                     },
                     ineffectiveTimeManagement: {
-                        title: "<b><i>Ineffective Time Management:</i></b>",
+                        title: "<b style='font-size: 16px;'><i>Ineffective Time Management</i></b>",
                         plainTextTitle: "Ineffective Time Management:",
                         description: "Effective time management ensures efficiency and creates balance in both personal and academic life without missing deadlines."
                     },
                     failingToLearnFromMistakes: {
-                        title: "<b><i>Failing to Learn from Mistakes:</i></b>",
+                        title: "<b style='font-size: 16px;'><i>Failing to Learn from Mistakes</i></b>",
                         plainTextTitle: "Failing to Learn from Mistakes:",
                         description: "Avoiding reflection on past mistakes leads to repeated failures, while learning from them fosters growth and improvement."
                     },
                     neglectingHealthAndWellness: {
-                        title: "<b><i>Neglecting Health and Wellness:</i></b>",
+                        title: "<b style='font-size: 16px;'><i>Neglecting Health and Wellness</i></b>",
                         plainTextTitle: "Neglecting Health and Wellness:",
                         description: "Ignoring physical and mental health drains energy and focus, but a balanced lifestyle enhances productivity and resilience."
                     },
                     ignoringConsistency: {
-                        title: "<b><i>Ignoring the Power of Consistency:</i></b>",
+                        title: "<b style='font-size: 16px;'><i>Ignoring the Power of Consistency</i></b>",
                         plainTextTitle: "Ignoring the Power of Consistency:",
                         description: "Inconsistent efforts hinder progress, while small, steady actions build habits and lead to sustainable success."
                     }
@@ -850,11 +880,11 @@
                 return;
             }
 
-            const { title, plainTextTitle, description } = category.data[itemKey];
+            const { plainTextTitle, description } = category.data[itemKey];
 
-            // Update info-box content with HTML rendering for title
+            // Update info-box content with plainTextTitle
             infoBox.style.display = "block";
-            document.getElementById("info-title").innerHTML = title; // Display formatted title
+            document.getElementById("info-title").textContent = plainTextTitle; // Display plain title
             document.getElementById("info-description").textContent = description; // Display plain description
 
             // Play audio if enabled
@@ -897,7 +927,6 @@
         document.getElementById("AudioBtn").addEventListener("click", toggleAudio);
         document.getElementById("categoryDropdown").addEventListener("change", handleCategoryChange);
         window.onload = initializeGallery;
-
     </script>
 </body>
 
