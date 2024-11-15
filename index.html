@@ -371,6 +371,87 @@
             outline: none;
             border-color: #4CAF50;
         }
+
+        @media (max-width: 768px) {
+
+            /* Tablets and small screens */
+            .container {
+                width: 90%;
+                /* Adjust width to fit smaller screens */
+                height: auto;
+                /* Adjust height for content */
+                padding: 15px;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 columns for better fit */
+                gap: 10px;
+            }
+
+            .wonder img {
+                width: 80px;
+                /* Smaller image size */
+                height: 80px;
+            }
+
+            .header-section span {
+                font-size: 14px;
+                /* Adjust font size */
+            }
+
+            #info-box {
+                width: 90%;
+                /* Full width for smaller screens */
+                left: 5%;
+                /* Center it within the screen */
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .footer {
+                font-size: 10px;
+                /* Smaller font for footer */
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* Mobile screens */
+            .container {
+                width: 100%;
+                /* Full width for mobile */
+                padding: 10px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                /* Single column for small screens */
+                gap: 5px;
+            }
+
+            .wonder img {
+                width: 60px;
+                /* Further reduced size */
+                height: 60px;
+            }
+
+            .header-section span {
+                font-size: 12px;
+                /* Further reduce font size */
+            }
+
+            #info-box {
+                font-size: 12px;
+                /* Smaller text for info box */
+                padding: 8px;
+            }
+
+            .footer {
+                font-size: 9px;
+                /* Small footer text for mobile */
+            }
+        }
     </style>
 </head>
 
