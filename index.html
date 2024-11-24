@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Discover and learn about the 7 Wonders of the World, 7 Continents, Digital Wonders, and more in an interactive and educational app.">
+    <meta name="author" content="Abu Momen">
+    <meta name="keywords"
+        content="7 Wonders, Seven Wonders, 7 Continents, Interactive Learning, Educational App, Digital Wonders, Effective Habits">
+    <meta property="og:title" content="7 Wonders by Abu Momen">
+    <meta property="og:description"
+        content="Explore the wonders of the world and beyond with this fun and engaging educational app. Learn interactively about continents, habits, and more.">
+    <meta property="og:image" content="path/to/7wonders-preview-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myghub23.github.io/7wonders.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="7 Wonders by Abu Momen">
+    <meta name="twitter:description"
+        content="An interactive app to learn about the 7 Wonders of the World, continents, habits, and more. Fun and educational!">
+    <meta name="twitter:image" content="path/to/7wonders-preview-image.jpg">
+    <title>7 Wonders by Abu Momen</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            padding: 10px;
+        }
+
+        .container {
+            text-align: center;
+            width: 360px;
+            /* Fixed width for consistency */
+            height: 405px;
+            /* Fixed height for consistency */
+            padding: 5px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: 2px solid red;
+            /* Consistent border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            /* Allow scrolling if content overflows */
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
+            transition: border-bottom-width 0.3s ease;
+            position: relative;
+            display: flex;
+            /* Enable flexbox layout */
+            flex-direction: column;
+            /* Stack children vertically */
+            justify-content: space-between;
+            /* Push footer to the bottom */
+            margin: 0 auto;
+            /* Center the container horizontally */
+        }
+
+
+
+        .header-section {
+            background-color: lightblue;
+            padding: 5px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .header-section button {
+            position: absolute;
+            top: 5px;
+            padding: 2px 5px;
+            background-color: blue;
+            color: yellow;
+            border-radius: 5px;
+        }
+
+        #AudioBtn {
+            position: absolute;
+            top: 1px;
+            right: 10px;
+            width: 30px;
+            /* Adjust the size of the audio icon */
+            height: 30px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        #AudioBtn:hover {
+            transform: scale(1.1);
+            /* Slight zoom on hover */
+        }
+
+        .header-section span {
+            display: inline-block;
+            background-color: yellow;
+            /* Apply background only to the text area */
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: blue;
+            text-align: center;
+        }
+
+        .gallery {
+            margin-top: -20px;
+            /* Center the grid container */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Always 3 columns */
+            gap: 5px;
+            /* Minimal gap between boxes */
+            justify-content: start;
+            /* Align grid items to the left */
+            align-items: center;
+            /* Vertically align the items */
+
+        }
+
+
+        .wonder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 110px;
+            background-color: aqua;
+            /* Default background */
+            border-radius: 10px;
+            /* Default shape */
+            padding: 2px;
+            transition: all 0.3s ease;
+            /* Smooth transitions */
+            margin-top: 0px;
+            /* Optional: Add spacing between rows */
+        }
+
+        /* Category-specific styles */
+        .wonder.category-7Wonders {
+            background-color: #87CEEB;
+            /* Sky blue */
+            border-radius: 10px;
+
+        }
+
+        .wonder.category-7Habits {
+            background-color: yellow;
+            /* Gold background */
+            border-radius: 2px;
+            /* Consistent rounded edges */
+            padding: 5px;
+            /* Add padding for consistent spacing */
+            height: 105px;
+            /* Fixed height for uniform size */
+            display: flex;
+            /* Ensure content aligns properly */
+            flex-direction: column;
+            /* Stack title and description vertically */
+            justify-content: center;
+            /* Center-align content */
+            align-items: center;
+            /* Center-align horizontally */
+            text-align: center;
+            /* Center-align text */
+            box-sizing: border-box;
+            /* Include padding and border in height calculation */
+            border-radius: 10px;
+        }
+
+
+
+        .wonder-7Habits p {
+            color: #FF4500;
+            /* Orange text */
+            text-align: left;
+            /* Align text to the left */
+            font-style: italic;
+        }
+
+        .wonder.category-7Continents {
+            background-color: #32CD32;
+            /* Gold background */
+            border-radius: 2px;
+            /* Consistent rounded edges */
+            padding: 5px;
+            /* Add padding for consistent spacing */
+            height: 105px;
+            /* Fixed height for uniform size */
+            display: flex;
+            /* Ensure content aligns properly */
+            flex-direction: column;
+            /* Stack title and description vertically */
+            justify-content: center;
+            /* Center-align content */
+            align-items: center;
+            /* Center-align horizontally */
+            text-align: center;
+            /* Center-align text */
+            box-sizing: border-box;
+            /* Include padding and border in height calculation */
+            border-radius: 10px;
+            color: #000080;
+            font-size: 18px;
+        }
+
+
+        .wonder-7Continents p {
+
+            /* Navy blue text */
+            text-align: right;
+            /* Align text to the right */
+            text-transform: uppercase;
+            /* Uppercase text */
+
+        }
+
+        .wonder img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+
+        .wonder img:hover {
+            transform: scale(1.05);
+            /* Slight zoom */
+        }
+
+        .wonder.category-7Habits img {
+            border: 2px solid #FFA500;
+            /* Orange border for 7 Habits */
+            border-radius: 10%;
+            /* Slightly less rounded */
+        }
+
+        .wonder.category-7Continents img {
+            border: 2px solid #000080;
+            /* Navy blue border for 7 Continents */
+            border-radius: 0;
+            /* Square shape */
+        }
+
+
+
+        .wonder.category-7Rainbow {
+            background-color: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border-radius: 10px;
+            padding: 5px;
+            height: 105px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            color: #000080;
+            font-size: 18px;
+        }
+
+        .wonder-7Rainbow img {
+            border: 2px solid #9400D3;
+            /* Purple border */
+            border-radius: 50%;
+        }
+
+        .wonder.category-7Digital {
+            background-color: orange;
+            /* Light Blue for tech */
+            border-radius: 10px;
+            padding: 5px;
+            height: 105px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            color: #000080;
+            /* Navy text */
+            font-size: 18px;
+        }
+
+        .wonder.category-7Roadblocks {
+            background-color: orange;
+            /* Light Blue for tech */
+            border-radius: 10px;
+            padding: 5px;
+            height: 105px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            color: #000080;
+            /* Navy text */
+            font-size: 18px;
+        }
+
+
+        .wonder.category-7Clearn {
+
+            /* Light Blue for tech */
+            border-radius: 10px;
+            padding: 5px;
+            height: 105px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+
+            /* Navy text */
+            font-size: 14px;
+            font-weight: bold;
+            color: #000080;
+        }
+
+        #info-box {
+            display: none;
+            text-align: justify;
+            position: absolute;
+            left: 57%;
+            transform: translateX(-41%);
+            /* Ensures the box can be moved relative to its container */
+            top: 260px;
+            /* Moves the box up by 50px */
+            margin-top: 10px;
+            background-color: rgba(22, 4, 99, 0.8);
+            color: #ffffff;
+            border: 2px solid #26a69a;
+            border-radius: 10px;
+            /* padding: 10px; */
+            /* Reduced padding */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            /* Set a fixed smaller width */
+            font-size: 12px;
+            /* Reduce font size for text */
+            padding: 5px;
+        }
+
+        #info-box h2 {
+            display: inline;
+            margin: 0;
+            color: #ffdd57;
+            font-size: 1rem;
+        }
+
+        #info-box p {
+            display: inline;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+
+        .footer {
+            text-align: center;
+            padding: 5px;
+            background-color: #f0f0f0;
+            /* Light grey background for footer */
+            border-top: 1px solid #ccc;
+            /* Add a border at the top */
+            font-size: 12px;
+            position: relative;
+            /* Ensure it stays within the container */
+            flex-shrink: 0;
+            /* Prevent footer from shrinking */
+        }
+
+
+        .footer span {
+            background-color: rgb(247, 247, 187);
+            padding: 2px 5px;
+        }
+
+
+        .dropdown {
+            position: absolute;
+            top: 0px;
+            left: 10px;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: yellow;
+            /* Set dropdown background color to yellow */
+            cursor: pointer;
+            color: blue;
+            font-weight: bold;
+        }
+
+        .dropdown:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-section">
+            <select id="categoryDropdown" class="dropdown">
+                <option value="7Wonders">7 Wonders of the World</option>
+                <option value="7Continents">7 Continents</option>
+                <option value="7Clearn">7 C's Learning</option>
+                <option value="7Roadblocks">7 Roadblocks</option>
+                <option value="7Digital">7 Digital Wonders</option>
+                <option value="7Tallest">7 Tallest Buildings </option>
+                <option value="7Rainbow">7 Colors of the Rainbow</option>
+                <option value="7Habits">7 Habits of Highly Effective People</option>
+            </select>
+            <div>
+                <span id="7wonderText"></span> <!-- Text removed -->
+            </div>
+            <img id="AudioBtn" src="images/audiooff.png" alt="Toggle Audio" />
+        </div>
+
+        <div class="gallery">
+            <div class="wonder" onclick="showInfo('colosseum')">
+                <!-- <img src="images/colosseum.png" alt="Colosseum"> -->
+                <!-- <p>Colosseum</p> -->
+            </div>
+            <div class="wonder" onclick="showInfo('petra')">
+                <!-- <img src="images/petra.png" alt="Petra"> -->
+                <!-- <p>Petra</p> -->
+            </div>
+            <div class="wonder" onclick="showInfo('tajmahal')">
+                <!-- <img src="images/tajmahal.png" alt="Taj Mahal"> -->
+                <!-- <p>Taj Mahal</p> -->
+            </div>
+            <div class="wonder" onclick="showInfo('greatwall')">
+                <!-- <img src="images/greatwall.png" alt="Great Wall of China"> -->
+                <!-- <p>Great Wall of China</p> -->
+            </div>
+
+            <div class="wonder" onclick="showInfo('chichénitzá')">
+                <!-- <img src="images/chichenitza.png" alt="Chichén Itzá"> -->
+                <!-- <p>Chichén Itzá</p> -->
+            </div>
+            <div class="wonder" onclick="showInfo('machupicchu')">
+                <!-- <img src="images/machupicchu.png" alt="Machu Picchu"> -->
+                <!-- <p>Machu Picchu</p> -->
+            </div>
+            <div class="wonder" onclick="showInfo('christredeemer')">
+                <!-- <img src="images/christredeemer.png" alt="Christ the Redeemer"> -->
+                <!-- <p>Christ the Redeemer</p> -->
+            </div>
+        </div>
+
+        <div id="info-box">
+            <h2 id="info-title"></h2>
+            <p id="info-description"></p>
+        </div>
+
+
+        <div class="footer">
+            <span>Created By <b style="color: orange;">DreamCare</b> | &#169; 2024 All Rights Reserved</span>
+        </div>
+    </div>
+
+    <script>
+        let audioEnabled = false; // Track the state of audio (enabled or disabled)
+
+        // Categories data
+        const categories = {
+            "7Wonders": {
+                title: "7 Wonders of the World",
+                data: {
+                    colosseum: {
+                        title: "Colosseum",
+                        plainTextTitle: "Colosseum:",
+                        description: "An ancient amphitheater in Rome, Italy, known for gladiatorial combat and other public spectacles. Built in around A.D. 70 to 72 by Emperor Vespasian of the Flavian dynasty"
+                    },
+                    petra: {
+                        title: "Petra",
+                        plainTextTitle: "Petra:",
+                        description: "A historical and archaeological city in southern Jordan, famous for its rock-cut architecture. It ia built in 5th century BC by The Nabataean"
+                    },
+                    tajmahal: {
+                        title: "Taj Mahal",
+                        plainTextTitle: "Taj Mahal:",
+                        description: "A magnificent mausoleum in India, built on 1632 to 1653 as a symbol of love by Emperor Shah Jahan."
+                    },
+                    greatwall: {
+                        title: "Great Wall of China",
+                        plainTextTitle: "Great Wall of China:",
+                        description: "An ancient series of walls in northern China, built for protection and trade. Construction started in the 7th century BC by Qin Dynasty, Ming dynasty"
+                    },
+                    chichenitza: {
+                        title: "Chichén Itzá",
+                        plainTextTitle: "Chichén Itzá:",
+                        description: "A large pre-Columbian archaeological site in Mexico built by the Maya civilization on 5th to 13th century"
+                    },
+                    machupicchu: {
+                        title: "Machu Picchu",
+                        plainTextTitle: "Machu Picchu:",
+                        description: "A 15th-century Inca citadel located high in the Andes Mountains of Peru. Construction is believed to be started in 1450 to 1460 by Incan Empire "
+                    },
+                    christredeemer: {
+                        title: "Christ the Redeemer",
+                        plainTextTitle: "Christ the Redeemer:",
+                        description: "A colossal statue of Jesus Christ in Rio de Janeiro, Brazil. Built in	1922 to 1931, designed by sculptor Paul Landowski and built by engineer Heitor da Silva Costa. "
+                    }
+                }
+            },
+            "7Continents": {
+                title: "7 Continents",
+                data: {
+                    africa: {
+                        title: "<b style='color: yellow;'>Africa</b>",
+                        plainTextTitle: "Africa:",
+                        description: "The second-largest continent with diverse ecosystems."
+                    },
+
+                    antarctica: {
+                        title: "<b>Antarctica</b>",
+                        plainTextTitle: "Antarctica:",
+                        description: "The coldest continent, covered in ice."
+                    },
+
+                    asia: {
+                        title: "<b><i style='color: yellow;'>Asia</i></b>",
+                        plainTextTitle: "Asia:",
+                        description: "The largest continent, rich in culture and history."
+                    },
+
+                    europe: {
+                        title: "<b>Europe</b>",
+                        plainTextTitle: "Europe:",
+                        description: "Known for historical landmarks and diverse cultures."
+                    },
+
+                    northAmerica: {
+                        title: "<b>North America</b>",
+                        plainTextTitle: "North America:",
+                        description: "A continent of diverse climates and geography."
+                    },
+
+                    southAmerica: {
+                        title: "<b style='color: yellow;'>South America</b>",
+                        plainTextTitle: "South America:",
+                        description: "Home to the Amazon rainforest and Andes Mountains."
+                    },
+
+                    australia: {
+                        title: "<b>Australia</b>",
+                        plainTextTitle: "Australia:",
+                        description: "The smallest continent, known for unique wildlife."
+                    }
+                }
+            },
+            "7Rainbow": {
+                title: "7 Colors of the Rainbow",
+                data: {
+                    red: {
+                        title: "Red",
+                        plainTextTitle: "Red:",
+                        description: "The color of passion and energy."
+                    },
+
+                    orange: {
+                        title: "Orange",
+                        plainTextTitle: "Orange:",
+                        description: "The color of creativity and enthusiasm."
+                    },
+
+                    yellow: {
+                        title: "<span style='color: blue;'>Yellow</span>",
+                        plainTextTitle: "Yellow:",
+                        description: "The color of sunshine and happiness."
+                    },
+
+                    green: {
+                        title: "Green",
+                        plainTextTitle: "Green:",
+                        description: "The color of nature and growth."
+                    },
+
+                    blue: {
+                        title: "Blue",
+                        plainTextTitle: "Blue:",
+                        description: "The color of calm and stability."
+                    },
+
+                    indigo: {
+                        title: "Indigo",
+                        plainTextTitle: "Indigo:",
+                        description: "The color of intuition and perception."
+                    },
+
+                    violet: {
+                        title: "Violet",
+                        plainTextTitle: "Violet:",
+                        description: "The color of imagination and spirituality."
+                    }
+                }
+            },
+            "7Habits": {
+                title: "7 Habits of Highly Effective People",
+                data: {
+                    habit1: {
+                        title: "<i style='color: blue;'>Be Proactive</i>",
+                        plainTextTitle: "Be Proactive:",
+                        description: "Take responsibility for your life and actions, and focus on what you can control rather than what you can't."
+                    },
+
+                    habit2: {
+                        title: "<i style='color: blue;'>Begin with the End in Mind</i>",
+                        plainTextTitle: "Begin with the End in Mind:",
+                        description: "Define your goals and purpose in life, and use them as a guide to make decisions and prioritize your actions."
+                    },
+
+                    habit3: {
+                        title: "<i style='color: blue;'>Put First Things First</i>",
+                        plainTextTitle: "Put First Things First:",
+                        description: "Prioritize your time and energy on the essential things in your life, and learn to say No to less important things."
+                    },
+
+                    habit4: {
+                        title: "<i style='color: blue;'>Think Win-Win:</i>",
+                        plainTextTitle: "Think Win-Win:",
+                        description: "Seek mutual benefit in all interactions and relationships, and look for solutions that benefit all parties involved."
+                    },
+
+                    habit5: {
+                        title: "<i style='color: blue;'>Seek First to Understand, Then to Be Understood</i>",
+                        plainTextTitle: "Seek First to Understand, Then to Be Understood:",
+                        description: "Listen empathetically and seek to understand others' perspectives before expressing your own."
+                    },
+
+                    habit6: {
+                        title: "<i style='color: blue;'>Synergize</i>",
+                        plainTextTitle: "Synergize:",
+                        description: "Work collaboratively with others to achieve goals and create outcomes more significant than any individual could achieve alone."
+                    },
+
+                    habit7: {
+                        title: "<i style='color: blue;'>Sharpen the Saw</i>",
+                        plainTextTitle: "Sharpen the Saw:",
+                        description: "Take time to renew and improve yourself physically, mentally, emotionally, and spiritually for continued success."
+                    }
+                }
+            },
+            "7Digital": {
+                title: "7 Digital Wonders",
+                data: {
+                    www: {
+                        title: "World Wide Web (WWW)",
+                        plainTextTitle: "World Wide Web (WWW):",
+                        description: "It revolutionized communication, knowledge-sharing, and commerce, forming the backbone of the modern digital age."
+                    },
+                    google: {
+                        title: "Google Search Engine",
+                        plainTextTitle: "Google Search Engine:",
+                        description: "Google revolutionized how we access information by organizing the world's data and making it searchable in seconds."
+                    },
+
+                    ai: {
+                        title: "Artificial Intelligence (AI)",
+                        plainTextTitle: "Artificial Intelligence (AI):",
+                        description: "It transforms industries with smart automation through applications like virtual assistants, self-driving cars, medical diagnostics and many more."
+                    },
+
+                    cloud: {
+                        title: "Cloud Computing",
+                        plainTextTitle: "Cloud Computing:",
+                        description: "For delivers on-demand computing services like storage, servers, and software over the internet."
+                    },
+
+                    smartphones: {
+                        title: "Smartphones",
+                        plainTextTitle: "Smartphones:",
+                        description: "For becoming the cornerstone of digital life. It revolutionized daily life, providing instant access to the internet, apps, and global connectivity at our fingertips."
+                    },
+
+                    socialMedia: {
+                        title: "Social Media Platforms",
+                        plainTextTitle: "Social Media Platforms:",
+                        description: "For connecting billions worldwide, enabling instant communication, content sharing, community building and so on."
+                    },
+                    iot: {
+                        title: "Internet of Things (IoT)",
+                        plainTextTitle: "Internet of Things (IoT):",
+                        description: "It connects everyday devices like appliances, sensors, and vehicles to the internet, enabling them to collect and exchange data for making smarter world."
+                    }
+
+                }
+            },
+
+            "7Clearn": {
+                title: "7 C’s of Learning",
+                data: {
+                    criticalThinking: {
+                        title: "Critical Thinking",
+                        plainTextTitle: "Critical Thinking:",
+                        description: "Develops the ability to analyze, evaluate, and synthesize information logically. Encourages learners to challenge assumptions and make informed decisions."
+                    },
+                    creativity: {
+                        title: "Creativity",
+                        plainTextTitle: "Creativity:",
+                        description: "Stimulates the mind to innovate, imagine, and explore new possibilities. Builds problem-solving skills by promoting flexible and original thinking."
+                    },
+                    collaboration: {
+                        title: "Collaboration",
+                        plainTextTitle: "Collaboration:",
+                        description: "Focuses on teamwork and shared goals, fostering mutual respect and trust. Develops interpersonal skills to work effectively with diverse groups."
+                    },
+                    communication: {
+                        title: "Communication",
+                        plainTextTitle: "Communication:",
+                        description: "Builds the capacity to convey ideas through spoken, written, or digital forms. Enhances active listening, storytelling, and persuasive speaking skills."
+                    },
+                    culturalAwareness: {
+                        title: "Cultural Awareness",
+                        plainTextTitle: "Cultural Awareness:",
+                        description: "Promotes understanding and appreciation of different perspectives and values. Helps navigate global challenges by embracing diversity and inclusion."
+                    },
+                    confidence: {
+                        title: "Confidence",
+                        plainTextTitle: "Confidence:",
+                        description: "Cultivates self-assurance to face challenges and take calculated risks. Encourages resilience by turning failures into opportunities for growth."
+                    },
+                    curiosity: {
+                        title: "Curiosity",
+                        plainTextTitle: "Curiosity:",
+                        description: "Drives learners to ask questions, seek answers, and engage deeply with topics. Builds lifelong learning habits by making education exciting and meaningful."
+                    }
+                }
+            },
+
+            "7Tallest": {
+                title: "7 Tallest Buildings",
+                data: {
+                    burjKhalifa: {
+                        title: "Burj Khalifa",
+                        plainTextTitle: "Burj Khalifa:",
+                        description: "The world's tallest building, located in Dubai, UAE. Completed in 2010, it stands at 828 meters.",
+                        imagePath: "./images/1burjKhalifa.jpg"
+                    },
+                    merdeka: {
+                        title: "Merdeka 118",
+                        plainTextTitle: "Merdeka 118:",
+                        description: "Located in Kuala Lumpur, Malaysia, this 678.9-meter skyscraper was completed in 2022.",
+                        imagePath: "./images/2merdeka.jpg"
+                    },
+                    shanghaiTower: {
+                        title: "Shanghai Tower",
+                        plainTextTitle: "Shanghai Tower:",
+                        description: "The tallest building in China, standing at 632 meters. Completed in 2015, it features a unique twisted design.",
+                        imagePath: "./images/3shanghaiTower.jpg"
+                    },
+                    makkahRoyalClock: {
+                        title: "Makkah Royal Clock Tower",
+                        plainTextTitle: "Makkah Royal Clock Tower:",
+                        description: "Located in Mecca, Saudi Arabia, it is 601 meters tall and features a massive clock face. Completed in 2012.",
+                        imagePath: "./images/4meccaclocktower.jpg"
+                    },
+                    pingAnFinanceCenter: {
+                        title: "Ping An Finance Center",
+                        plainTextTitle: "Ping An Finance Center:",
+                        description: "Standing at 599 meters, this skyscraper is in Shenzhen, China. Completed in 2017, it serves as a hub for finance and commerce.",
+                        imagePath: "./images/5pingan.jpg"
+                    },
+                    lotteWorldTower: {
+                        title: "Lotte World Tower",
+                        plainTextTitle: "Lotte World Tower:",
+                        description: "A 555-meter skyscraper in Seoul, South Korea, completed in 2016. It is a symbol of modern design and engineering.",
+                        imagePath: "./images/6lotte.jpg"
+                    },
+                    oneWorldTradeCenter: {
+                        title: "One World Trade Center",
+                        plainTextTitle: "One World Trade Center:",
+                        description: "Located in New York City, USA, this 541-meter building, also known as Freedom Tower, was completed in 2014.",
+                        imagePath: "./images/7oneworld.jpg"
+                    }
+                }
+            },
+            "7Roadblocks": {
+                title: "7 Roadblocks",
+                data: {
+                    procrastination: {
+                        title: "<b style='font-size: 13px;'>Procrastination</b>",
+                        plainTextTitle: "Procrastination:",
+                        description: "Delaying important tasks leads to unnecessary stress and rushed work, often affecting quality that to missed opportunities for growth."
+                    },
+                    lackCuriosity: {
+                        title: "<b style='font-size: 16px;'><i>Lack of Curiosity</i></b>",
+                        plainTextTitle: "Lack of Curiosity:",
+                        description: "A lack of curiosity prevents deeper learning while curiosity drives innovation and helps in making meaningful connections between ideas."
+                    },
+                    lackClearGoals: {
+                        title: "<b style='font-size: 16px;'><i>Lack of Clear Goals</i></b>",
+                        plainTextTitle: "Lack of Clear Goals:",
+                        description: "Without clear goals, it’s easy to lose focus and motivation, making it harder to measure progress or stay on track. Clear goals provide measurable milestones to track progress."
+                    },
+                    ineffectiveTimeManagement: {
+                        title: "<b style='font-size: 16px;'><i>Ineffective Time Management</i></b>",
+                        plainTextTitle: "Ineffective Time Management:",
+                        description: "Effective time management ensures efficiency and creates balance in both personal and academic life without missing deadlines."
+                    },
+                    failingToLearnFromMistakes: {
+                        title: "<b style='font-size: 16px;'><i>Failing to Learn from Mistakes</i></b>",
+                        plainTextTitle: "Failing to Learn from Mistakes:",
+                        description: "Avoiding reflection on past mistakes leads to repeated failures, while learning from them fosters growth and improvement."
+                    },
+                    neglectingHealthAndWellness: {
+                        title: "<b style='font-size: 16px;'><i>Neglecting Health and Wellness</i></b>",
+                        plainTextTitle: "Neglecting Health and Wellness:",
+                        description: "Ignoring physical and mental health drains energy and focus, but a balanced lifestyle enhances productivity and resilience."
+                    },
+                    ignoringConsistency: {
+                        title: "<b style='font-size: 16px;'><i>Ignoring the Power of Consistency</i></b>",
+                        plainTextTitle: "Ignoring the Power of Consistency:",
+                        description: "Inconsistent efforts hinder progress, while small, steady actions build habits and lead to sustainable success."
+                    }
+                }
+            }
+
+        };
+
+        // Function to toggle audio
+        function toggleAudio() {
+            const audioButton = document.getElementById("AudioBtn");
+            audioEnabled = !audioEnabled; // Toggle the audio state
+
+            // Update the button image based on the audio state
+            audioButton.src = audioEnabled ? "images/audio.png" : "images/audiooff.png";
+
+            // Notify user about the audio state
+            playAudio(audioEnabled ? "Audio Enabled" : "Audio Disabled");
+        }
+
+        // Function to play audio
+        function playAudio(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.cancel(); // Clear any ongoing speech
+            speechSynthesis.speak(speech);
+        }
+
+        // Function to create a wonder div (handles image and text rendering)
+        function createWonderDiv(itemKey, itemData, category) {
+          //  const imagePath = itemData.imagePath || `images/${itemKey}.png`; // Use the custom imagePath if it exists
+            const imagePath = itemData.imagePath || `./images/${itemKey}.png`;
+            const wonderDiv = document.createElement("div");
+            wonderDiv.classList.add("wonder"); // Base wonder styling
+            wonderDiv.classList.add(`category-${category}`); // Add category-specific class
+
+            const img = new Image();
+            img.src = imagePath;
+
+            if (category === "7Tallest" || category === "7Wonders")  {
+                // Only display the image for "7Tallest" without the title
+                img.onload = () => {
+                    wonderDiv.innerHTML = `
+                <img src="${imagePath}" alt="${itemData.title}">
+            `;
+                };
+                img.onerror = () => {
+                    wonderDiv.innerHTML = `<p>Image not available</p>`; // Fallback text if the image fails to load
+                };
+            } else {
+                // Display both image and text for other categories
+                img.onload = () => {
+                    wonderDiv.innerHTML = `
+                <img src="${imagePath}" alt="${itemData.title}">
+                <p>${itemData.title}</p>
+            `;
+                };
+                img.onerror = () => {
+                    wonderDiv.innerHTML = `<p>${itemData.title}</p>`; // Fallback to text if the image is missing
+                };
+            }
+
+            if (category === "7Rainbow") {
+                const colorMap = {
+                    red: "red",
+                    orange: "orange",
+                    yellow: "yellow",
+                    green: "green",
+                    blue: "blue",
+                    indigo: "indigo",
+                    violet: "violet",
+                };
+                wonderDiv.style.backgroundColor = colorMap[itemKey] || "white"; // Assign color based on the key
+                wonderDiv.style.color = "white"; // Ensure text is visible on dark backgrounds
+            }
+
+            if (category === "7Clearn") {
+                const colorMap = {
+                    criticalThinking: "#FF6347", // Tomato Red
+                    creativity: "#FFD700", // Gold
+                    collaboration: "#32CD32", // Lime Green
+                    communication: "#1E90FF", // Dodger Blue
+                    culturalAwareness: "#FF69B4", // Hot Pink
+                    confidence: "#FF8C00", // Dark Orange
+                    curiosity: "#9400D3" // Dark Violet
+                };
+                wonderDiv.style.backgroundColor = colorMap[itemKey] || "white"; // Assign color based on the key
+                wonderDiv.style.color = "white"; // Ensure text is visible on dark backgrounds
+            }
+
+            wonderDiv.setAttribute("onclick", `showInfo('${itemKey}')`);
+            return wonderDiv;
+        }
+
+
+        // Function to show info when an item is clicked
+        function showInfo(itemKey) {
+            const infoBox = document.getElementById("info-box");
+            const selectedCategory = document.getElementById("categoryDropdown").value;
+            const category = categories[selectedCategory];
+
+            if (!category || !category.data[itemKey]) {
+                console.error(`Item '${itemKey}' not found in the selected category '${selectedCategory}'.`);
+                return;
+            }
+
+            const { plainTextTitle, description } = category.data[itemKey];
+
+            // Update info-box content with plainTextTitle
+            infoBox.style.display = "block";
+            document.getElementById("info-title").textContent = plainTextTitle; // Display plain title
+            document.getElementById("info-description").textContent = description; // Display plain description
+
+            // Play audio if enabled
+            if (audioEnabled) {
+                playAudio(`${plainTextTitle} ${description}`);
+            }
+        }
+
+        // Function to handle category changes and populate the gallery
+        function handleCategoryChange() {
+            const selectedCategory = document.getElementById("categoryDropdown").value;
+            const category = categories[selectedCategory];
+
+            if (!category) {
+                console.error(`Selected category '${selectedCategory}' not found.`);
+                return;
+            }
+
+            // Update the gallery dynamically
+            const gallery = document.querySelector(".gallery");
+            gallery.innerHTML = ""; // Clear current items
+
+            Object.keys(category.data).forEach((key) => {
+                const item = category.data[key];
+                const wonderDiv = createWonderDiv(key, item, selectedCategory);
+                gallery.appendChild(wonderDiv);
+            });
+
+            // Hide the info-box when changing categories
+            document.getElementById("info-box").style.display = "none";
+        }
+
+        // Initialize the gallery for the default category on page load
+        function initializeGallery() {
+            document.getElementById("categoryDropdown").value = "7Wonders";
+            handleCategoryChange();
+        }
+
+        // Add event listeners
+        document.getElementById("AudioBtn").addEventListener("click", toggleAudio);
+        document.getElementById("categoryDropdown").addEventListener("change", handleCategoryChange);
+        window.onload = initializeGallery;
+    </script>
+</body>
+
+</html>
