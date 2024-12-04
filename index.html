@@ -306,6 +306,23 @@
         }
 
 
+        .wonder.category-7Lcountry {
+            background-color: orange;
+            /* Light Blue for tech */
+            border-radius: 10px;
+            padding: 5px;
+            height: 105px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            color: #000080;
+            /* Navy text */
+            font-size: 18px;
+        }
+
         .wonder.category-7Clearn {
 
             /* Light Blue for tech */
@@ -416,6 +433,7 @@
                 <option value="7Roadblocks">7 Roadblocks</option>
                 <option value="7Digital">7 Digital Wonders</option>
                 <option value="7Tallest">7 Tallest Buildings </option>
+                <option value="7Lcountry">7 Largest Countries </option>
                 <option value="7Rainbow">7 Colors of the Rainbow</option>
                 <option value="7Habits">7 Habits of Highly Effective People</option>
             </select>
@@ -824,7 +842,48 @@
                         description: "Inconsistent efforts hinder progress, while small, steady actions build habits and lead to sustainable success."
                     }
                 }
+            },
+            "7Lcountry": {
+                title: "7 Largest Countries",
+                data: {
+                    russia: {
+                        title: "<b style='font-size: 13px;'>Russia</b>",
+                        plainTextTitle: "Russia:",
+                        description: "The largest country in the world, covering approximately 17.1 million square kilometers (11.5% - world landmass)."
+                    },
+                    canada: {
+                        title: "<b style='font-size: 16px;'><i>Canada</i></b>",
+                        plainTextTitle: "Canada:",
+                        description: "The second-largest country with a land area of about 9.98 million square kilometers (6.7% - world landmass)."
+                    },
+                    china: {
+                        title: "<b style='font-size: 16px;'><i>China</i></b>",
+                        plainTextTitle: "China:",
+                        description: "The third-largest country, spanning approximately 9.6 million square kilometers (6.4% - world landmass)."
+                    },
+                    unitedStates: {
+                        title: "<b style='font-size: 16px;'><i>United States</i></b>",
+                        plainTextTitle: "United States:",
+                        description: "Ranked fourth, covering around 9.53 million square kilometers (6.4% - world landmass), including Alaska and Hawaii."
+                    },
+                    brazil: {
+                        title: "<b style='font-size: 16px;'><i>Brazil</i></b>",
+                        plainTextTitle: "Brazil:",
+                        description: "The fifth-largest country, with a land area of approximately 8.51 million square kilometers (5.7% - world landmass)."
+                    },
+                    australia: {
+                        title: "<b style='font-size: 16px;'><i>Australia</i></b>",
+                        plainTextTitle: "Australia:",
+                        description: "The sixth-largest country, covering about 7.69 million square kilometers (5.2% - world landmass)."
+                    },
+                    india: {
+                        title: "<b style='font-size: 16px;'><i>India</i></b>",
+                        plainTextTitle: "India:",
+                        description: "The seventh-largest country, spanning around 3.29 million square kilometers (2.2% - world landmass)."
+                    }
+                }
             }
+
 
         };
 
@@ -849,7 +908,7 @@
 
         // Function to create a wonder div (handles image and text rendering)
         function createWonderDiv(itemKey, itemData, category) {
-          //  const imagePath = itemData.imagePath || `images/${itemKey}.png`; // Use the custom imagePath if it exists
+            //  const imagePath = itemData.imagePath || `images/${itemKey}.png`; // Use the custom imagePath if it exists
             const imagePath = itemData.imagePath || `./images/${itemKey}.png`;
             const wonderDiv = document.createElement("div");
             wonderDiv.classList.add("wonder"); // Base wonder styling
@@ -858,7 +917,7 @@
             const img = new Image();
             img.src = imagePath;
 
-            if (category === "7Tallest" || category === "7Wonders")  {
+            if (category === "7Tallest" || category === "7Wonders") {
                 // Only display the image for "7Tallest" without the title
                 img.onload = () => {
                     wonderDiv.innerHTML = `
@@ -908,6 +967,63 @@
                 wonderDiv.style.backgroundColor = colorMap[itemKey] || "white"; // Assign color based on the key
                 wonderDiv.style.color = "white"; // Ensure text is visible on dark backgrounds
             }
+
+            if (category === "7Habits") {
+                const colorMap = {
+                    habit1: "#FF6347", // Tomato Red
+                    habit2: "#FFD700", // Gold
+                    habit3: "#32CD32", // Lime Green
+                    habit4: "#1E90FF", // Dodger Blue
+                    habit5: "#FF69B4", // Hot Pink
+                    habit6: "#FF8C00", // Dark Orange
+                    habit7: "#FFFF00" // Dark Violet
+                };
+                wonderDiv.style.backgroundColor = colorMap[itemKey] || "white"; // Assign color based on the key
+                wonderDiv.style.color = "white"; // Ensure text is visible on dark backgrounds
+            }
+
+            if (category === "7Lcountry") {
+                const colorMap = {
+                    russia:"#1E90FF", // Dodger Blue 
+                    canada: "#9400D3", // Dark Violet
+                    china: "#32CD32", // Lime Green
+                    unitedStates: "#FF6347", // Tomato Red
+                    brazil: "#FF69B4", // Hot Pink
+                    australia: "#FF8C00", // Dark Orange
+                    india: "#0000FF" //  blue
+                };
+                wonderDiv.style.backgroundColor = colorMap[itemKey] || "white"; // Assign color based on the key
+                wonderDiv.style.color = "white"; // Ensure text is visible on dark backgrounds
+            }
+
+            if (category === "7Roadblocks") {
+                const colorMap = {
+                    procrastination: "red",
+                    lackCuriosity: "orange",
+                    lackClearGoals: "blue",
+                    ineffectiveTimeManagement: "green",
+                    failingToLearnFromMistakes: "blue",
+                    neglectingHealthAndWellness: "indigo",
+                    ignoringConsistency: "violet",
+                };
+                wonderDiv.style.backgroundColor = colorMap[itemKey] || "white"; // Assign color based on the key
+                wonderDiv.style.color = "white"; // Ensure text is visible on dark backgrounds
+            }
+
+            if (category === "7Digital") {
+                const colorMap = {
+                    www:"#1E90FF", // Dodger Blue 
+                    google: "#9400D3", // Dark Violet
+                    ai: "#32CD32", // Lime Green
+                    cloud: "#FF6347", // Tomato Red
+                    smartphones: "#FF69B4", // Hot Pink
+                    socialMedia: "#FF8C00", // Dark Orange
+                    iot: "#0000FF" //  blue
+                };
+                wonderDiv.style.backgroundColor = colorMap[itemKey] || "white"; // Assign color based on the key
+                wonderDiv.style.color = "white"; // Ensure text is visible on dark backgrounds
+            }
+
 
             wonderDiv.setAttribute("onclick", `showInfo('${itemKey}')`);
             return wonderDiv;
