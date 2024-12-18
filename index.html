@@ -20,6 +20,7 @@
     <meta name="twitter:description"
         content="An interactive app to learn about the 7 Wonders of the World, continents, habits, and more. Fun and educational!">
     <meta name="twitter:image" content="path/to/7wonders-preview-image.jpg">
+
     <title>7 Wonders by Abu Momen</title>
     <style>
         body {
@@ -483,10 +484,12 @@
         </div>
 
 
-        <div class="footer"> 
-            Created by <a href="mailto:mydreamcarebd@gmail.com" style="color:yellow; text-decoration: underline;"><strong>Abu Momen</strong></a> | © 2024 All Rights Reserved
+        <div class="footer">
+            Created by <a href="mailto:mydreamcarebd@gmail.com"
+                style="color:yellow; text-decoration: underline;"><strong>Abu Momen</strong></a> | © 2024 All Rights
+            Reserved
         </div>
-        
+
     </div>
 
     <script>
@@ -540,7 +543,7 @@
                     asia: {
                         title: "<b><i style='color: yellow;'>Asia</i></b>",
                         plainTextTitle: "Asia:",
-                        description: "The largest continent, covering about 44.58 million square kilometers, rich in culture and history."                                 
+                        description: "The largest continent, covering about 44.58 million square kilometers, rich in culture and history."
                     },
 
                     africa: {
@@ -566,13 +569,13 @@
                         description: "The fifth-largest continent, covering approximately 14 million square kilometers, and the coldest, with most of its landmass covered in ice."
                     },
 
-                
+
                     europe: {
                         title: "<b style='color: yellow;'>Europe</b>",
                         plainTextTitle: "Europe:",
                         description: "The sixth-largest continent, spanning about 10.18 million square kilometers, known for historical landmarks and diverse cultures."
                     },
-               
+
                     australia: {
                         title: "<b>Australia</b>",
                         plainTextTitle: "Australia:",
@@ -987,7 +990,7 @@
 
             if (category === "7Lcountry") {
                 const colorMap = {
-                    russia:"#1E90FF", // Dodger Blue 
+                    russia: "#1E90FF", // Dodger Blue 
                     canada: "#9400D3", // Dark Violet
                     china: "#32CD32", // Lime Green
                     unitedStates: "#FF6347", // Tomato Red
@@ -1015,7 +1018,7 @@
 
             if (category === "7Digital") {
                 const colorMap = {
-                    www:"#1E90FF", // Dodger Blue 
+                    www: "#1E90FF", // Dodger Blue 
                     google: "#9400D3", // Dark Violet
                     ai: "#32CD32", // Lime Green
                     cloud: "#FF6347", // Tomato Red
@@ -1091,6 +1094,18 @@
         document.getElementById("AudioBtn").addEventListener("click", toggleAudio);
         document.getElementById("categoryDropdown").addEventListener("change", handleCategoryChange);
         window.onload = initializeGallery;
+
+        // for facebook
+        document.addEventListener("DOMContentLoaded", function () {
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Check if Facebook in-app browser is detected
+            if (ua.includes("FBAN") || ua.includes("FBAV")) {
+                // Redirect to the same page in an external browser
+                window.location.href = "googlechrome://navigate?url=" + window.location.href;
+            }
+        });
+
     </script>
 </body>
 
