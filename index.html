@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -159,7 +158,7 @@
             /* Consistent rounded edges */
             padding: 5px;
             /* Add padding for consistent spacing */
-          
+
             /* Fixed height for uniform size */
             display: flex;
             /* Ensure content aligns properly */
@@ -194,7 +193,7 @@
             /* Consistent rounded edges */
             padding: 5px;
             /* Add padding for consistent spacing */
-          
+
             /* Fixed height for uniform size */
             display: flex;
             /* Ensure content aligns properly */
@@ -215,7 +214,7 @@
 
 
         .wonder-7Continents p {
-          
+
             /* Navy blue text */
             text-align: right;
             /* Align text to the right */
@@ -246,7 +245,7 @@
         }
 
         .wonder.category-7Continents img {
-           
+
             border: 2px solid #000080;
             /* Navy blue border for 7 Continents */
             border-radius: 0;
@@ -428,6 +427,7 @@
             border-color: #4CAF50;
         }
 
+        /* Styles for small phones (max-width: 600px) */
         @media (max-width: 600px) {
             #info-box {
                 width: 195px;
@@ -442,9 +442,72 @@
                 display: inline;
                 margin: 0;
                 font-size: .8rem;
-            }  
-
+            }
         }
+
+        /* Styles for tablets in portrait (601px to 768px) */
+        @media (min-width: 601px) and (max-width: 768px) {
+            #info-box {
+                width: 220px;
+                left: 55%;
+            }
+
+            #info-box h2 {
+                font-size: 1rem;
+            }
+
+            #info-box p {
+                font-size: .9rem;
+            }
+        }
+
+        /* Styles for small laptops (769px to 992px) */
+        @media (min-width: 769px) and (max-width: 992px) {
+            #info-box {
+                width: 240px;
+                left: 53%;
+            }
+
+            #info-box h2 {
+                font-size: 1.1rem;
+            }
+
+            #info-box p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Styles for larger laptops and desktops (993px to 1200px) */
+        @media (min-width: 993px) and (max-width: 1200px) {
+            #info-box {
+                width: 260px;
+                left: 50%;
+            }
+
+            #info-box h2 {
+                font-size: 1.2rem;
+            }
+
+            #info-box p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Styles for very large screens (above 1200px) */
+        /* @media (min-width: 1201px) {
+            #info-box {
+                width: 300px;
+                left: 50%;
+            }
+
+            #info-box h2 {
+                font-size: 1.3rem;
+            }
+
+            #info-box p {
+                font-size: 1.2rem;
+            }
+        } */
     </style>
 </head>
 
