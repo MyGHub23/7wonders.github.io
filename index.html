@@ -292,6 +292,23 @@
             font-size: 18px;
         }
 
+        .wonder.category-7Mountain {
+            background: linear-gradient(to bottom, #242dd8, #1b024b, #5112da);
+            /* background-color: orange; */
+            /* Light Blue for tech */
+            border-radius: 10px;
+            padding: 5px;
+            height: 85px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            color:yellow;
+            /* Navy text */
+            font-size: 18px;
+        }
         .wonder.category-7Roadblocks {
             background-color: orange;
             /* Light Blue for tech */
@@ -522,6 +539,7 @@
                 <option value="7Digital">7 Digital Wonders</option>
                 <option value="7Tallest">7 Tallest Buildings </option>
                 <option value="7Lcountry">7 Largest Countries </option>
+                <option value="7Mountain">7 Highest Mountains </option>
                 <option value="7Rainbow">7 Colors of the Rainbow</option>
                 <option value="7Habits">7 Habits of Highly Effective People</option>
             </select>
@@ -973,7 +991,48 @@
                         description: "The seventh-largest country, spanning around 3.29 million square kilometers (2.2% - world landmass)."
                     }
                 }
+            },
+            "7Mountain": {
+                title: "7 Highest Mountains",
+                data: {
+                    mountEverest: {
+                        title: "<b style='font-size: 16px;'>Mount Everest</b>",
+                        plainTextTitle: "Mount Everest:",
+                        description: "Standing at 29,031.7 feet, Mount Everest is the tallest mountain on Earth, located in the Himalayas on the border of Nepal and China."
+                    },
+                    k2: {
+                        title: "<b style='font-size: 16px;'><i>K2 (Mount Godwin-Austen)</i></b>",
+                        plainTextTitle: "K2:",
+                        description: "At 28,251 feet, K2 is the second-highest peak, situated in the Karakoram Range between Pakistan and China, and is known for its extreme difficulty."
+                    },
+                    kangchenjunga: {
+                        title: "<b style='font-size: 16px;'><i>Kangchenjunga</i></b>",
+                        plainTextTitle: "Kangchenjunga:",
+                        description: "This peak rises to 28,169 feet and is the third-highest mountain, located on the border between Nepal and India, revered for its sacredness."
+                    },
+                    lhotse: {
+                        title: "<b style='font-size: 16px;'><i>Lhotse</i></b>",
+                        plainTextTitle: "Lhotse:",
+                        description: "The fourth-highest mountain, Lhotse reaches 27,940 feet and is connected to Mount Everest via the South Col, lying on the Nepal-China border."
+                    },
+                    makalu: {
+                        title: "<b style='font-size: 16px;'><i>Makalu</i></b>",
+                        plainTextTitle: "Makalu:",
+                        description: "At 27,838 feet, Makalu is the fifth-highest peak, renowned for its unique pyramid-shaped summit, located on the Nepal-China border."
+                    },
+                    choOyu: {
+                        title: "<b style='font-size: 16px;'><i>Cho Oyu</i></b>",
+                        plainTextTitle: "Cho Oyu:",
+                        description: "This mountain stands at 26,864 feet and is the sixth-highest peak, located in the Himalayas on the Nepal-China border, often considered one of the easier 8,000-meter climbs."
+                    },
+                    dhaulagiriI: {
+                        title: "<b style='font-size: 16px;'><i>Dhaulagiri I</i></b>",
+                        plainTextTitle: "Dhaulagiri I:",
+                        description: "Rising to 26,795 feet, Dhaulagiri I is the seventh-highest mountain, situated in western Nepal, and is known for its dramatic isolation."
+                    }
+                }
             }
+
 
 
         };
@@ -1114,7 +1173,7 @@
                 wonderDiv.style.backgroundColor = colorMap[itemKey] || "white"; // Assign color based on the key
                 wonderDiv.style.color = "white"; // Ensure text is visible on dark backgrounds
             }
-
+         
 
             wonderDiv.setAttribute("onclick", `showInfo('${itemKey}')`);
             return wonderDiv;
